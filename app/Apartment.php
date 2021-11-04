@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
 {
+    //accesso diretto da apartments a services(many to many)
+    protected $with = ['services'];
+    
     public function user(){
         return $this->belongsTo(User::class);
     }
